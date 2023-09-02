@@ -8,9 +8,9 @@ export default function Home() {
   //   alert('Apple is a Fruit');
   // };
 
-  const apple = (item) => {
-    alert(`Apple is a ${item}`);
-  };
+  // const apple = (item) => {
+  //   alert(`Apple is a ${item}`);
+  // };
 
   const updateName = () => {
     setName('Jignesh Sharma');
