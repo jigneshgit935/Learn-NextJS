@@ -1,4 +1,5 @@
 import React from 'react';
+import ProductButton from './product';
 
 async function productList() {
   let data = await fetch('https://dummyjson.com/products');
@@ -152,6 +153,7 @@ const Product = async () => {
                     {item.description}
                   </p>
                 </div>
+                <ProductButton price={item.price} />
               </div>
             ))}
           </div>
