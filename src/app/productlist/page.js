@@ -1,18 +1,14 @@
-'use client';
-
 import React from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
 
-const Product = () => {
-  const [product, setProduct] = useState([]);
+async function productList() {
+  let data = await fetch('https://dummyjson.com/products');
+  data = await data.json();
+  return data.products;
+}
 
-  useEffect(async () => {
-    let data = await fetch('https://dummyjson.com/products');
-    data = await data.json();
-    setProduct(data.products);
-  }, []);
-
+const Product = async () => {
+  let products = await productList();
+  console.log(products);
   return (
     <>
       <div style={{}}>
@@ -24,7 +20,7 @@ const Product = () => {
 
         <section>
           <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-            {product.map((item, index) => (
+            {products.map((item, index) => (
               <div
                 key={index}
                 style={{

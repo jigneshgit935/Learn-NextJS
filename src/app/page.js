@@ -10,7 +10,7 @@ export default function Home() {
           border: '1px solid black',
         }}
       >
-        <h1>Fetch Data with API in Client Component</h1>
+        <h1>Fetch Data with API in Server Component</h1>
       </main>
 
       <section
