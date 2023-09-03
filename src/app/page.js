@@ -1,5 +1,5 @@
 'use client';
-
+import custom from './custom.module.css';
 import { useState } from 'react';
 
 export default function Home() {
@@ -17,20 +17,8 @@ export default function Home() {
           border: '1px solid black',
         }}
       >
-        <h1>Css</h1>
-        <h3 style={{ color: 'green' }}>Inline Css</h3>
-        <h2 style={updateColor}>Update Color on button click</h2>
-        <button
-          onClick={() =>
-            setUpdateColor({
-              backgroundColor: 'green',
-              color: 'red',
-              padding: '10px',
-            })
-          }
-        >
-          Update style
-        </button>
+        <h1 className={custom.main}>Module Css</h1>
+        <h2 className="main">Heading 2</h2>
       </main>
     </>
   );
