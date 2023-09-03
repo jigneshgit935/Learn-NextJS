@@ -1,6 +1,13 @@
-import Link from 'next/link';
+'use client';
+
+import { useState } from 'react';
 
 export default function Home() {
+  const [updateColor, setUpdateColor] = useState({
+    backgroundColor: 'blue',
+    color: 'white',
+    padding: '10px',
+  });
   return (
     <>
       <main
@@ -10,18 +17,21 @@ export default function Home() {
           border: '1px solid black',
         }}
       >
-        <h1>Fetch Data with API in Server Component</h1>
+        <h1>Css</h1>
+        <h3 style={{ color: 'green' }}>Inline Css</h3>
+        <h2 style={updateColor}>Update Color on button click</h2>
+        <button
+          onClick={() =>
+            setUpdateColor({
+              backgroundColor: 'green',
+              color: 'red',
+              padding: '10px',
+            })
+          }
+        >
+          Update style
+        </button>
       </main>
-
-      <section
-        style={{
-          textAlign: 'center',
-          marginTop: '20px',
-          fontSize: '30px',
-        }}
-      >
-        <Link href="/productlist">Go to product page</Link>
-      </section>
     </>
   );
 }
