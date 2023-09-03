@@ -1,13 +1,10 @@
 'use client';
-import custom from './custom.module.css';
 import { useState } from 'react';
+import style from './style.module.css';
 
 export default function Home() {
-  const [updateColor, setUpdateColor] = useState({
-    backgroundColor: 'blue',
-    color: 'white',
-    padding: '10px',
-  });
+  const [color, setColor] = useState('red');
+  const { red } = style;
   return (
     <>
       <main
@@ -17,8 +14,19 @@ export default function Home() {
           border: '1px solid black',
         }}
       >
-        <h1 className={custom.main}>Module Css</h1>
-        <h2 className="main">Heading 2</h2>
+        <h1 className={color === 'red' ? style.red : style.green}>
+          Conditional style
+        </h1>
+        <h2 style={{ backgroundColor: color === 'red' ? 'red' : 'green' }}>
+          Heading
+        </h2>
+        <h3 id={style.orange}>Heading 3</h3>
+
+        <h3 className={red}>Dummy</h3>
+        <h3 className={red}>Dummy</h3>
+        <h3 className={red}>Dummy</h3>
+        <h3 className={red}>Dummy</h3>
+        <button onClick={() => setColor('green')}>Change color</button>
       </main>
     </>
   );
