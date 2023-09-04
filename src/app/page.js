@@ -1,5 +1,11 @@
-import Image from 'next/image';
-import ImageOpt from './lon.jpg';
+import { Roboto } from 'next/font/google';
+
+const roboto = Roboto({
+  weight: '100',
+  subsets: ['latin'],
+  display: 'swap',
+});
+
 export default function Home() {
   return (
     <>
@@ -10,8 +16,7 @@ export default function Home() {
           border: '1px solid black',
         }}
       >
-        <h1>Image Optimization</h1>
-        <Image width={900} height={900} src={ImageOpt} alt="image-test" />
+        <h1 className={roboto.className}>Font with Nextjs</h1>
       </main>
     </>
   );
