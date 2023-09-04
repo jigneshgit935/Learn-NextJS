@@ -10,11 +10,8 @@ export default function Home() {
           border: '1px solid black',
         }}
       >
-        <h1>Make a production build</h1>
-        <Link href="/product">Product</Link>
-        <Link style={{ marginLeft: '20px' }} href="/seller">
-          Seller
-        </Link>
+        <h1>Static Site Generation</h1>
+        <Link href="/userlist">UserList</Link>
       </main>
     </>
   );
