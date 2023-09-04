@@ -1,10 +1,6 @@
-'use client';
-import { useState } from 'react';
-import style from './style.module.css';
-
+import Image from 'next/image';
+import ImageOpt from './lon.jpg';
 export default function Home() {
-  const [color, setColor] = useState('red');
-  const { red } = style;
   return (
     <>
       <main
@@ -14,19 +10,8 @@ export default function Home() {
           border: '1px solid black',
         }}
       >
-        <h1 className={color === 'red' ? style.red : style.green}>
-          Conditional style
-        </h1>
-        <h2 style={{ backgroundColor: color === 'red' ? 'red' : 'green' }}>
-          Heading
-        </h2>
-        <h3 id={style.orange}>Heading 3</h3>
-
-        <h3 className={red}>Dummy</h3>
-        <h3 className={red}>Dummy</h3>
-        <h3 className={red}>Dummy</h3>
-        <h3 className={red}>Dummy</h3>
-        <button onClick={() => setColor('green')}>Change color</button>
+        <h1>Image Optimization</h1>
+        <Image width={900} height={900} src={ImageOpt} alt="image-test" />
       </main>
     </>
   );
